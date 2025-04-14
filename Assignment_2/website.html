@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Health Coach - Personalized Fitness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #4CAF50, #81C784);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        nav {
+            background: #333;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #4CAF50;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+
+        .cta-button:hover {
+            background: #388E3C;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 3rem 2rem;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Form Section */
+        .health-form {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: #fff;
+        }
+
+        .health-form h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .health-form form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .health-form input,
+        .health-form select {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .health-form button {
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .health-form button:hover {
+            background: #388E3C;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 3rem 2rem;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Chatbot */
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>AI Health Coach</h1>
+        <p>Your Personalized Path to Fitness and Wellness</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#form">Get Started</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Transform Your Health with AI</h2>
+        <p>Get personalized diet plans, workout routines, and health tips tailored to your unique needs.</p>
+        <a href="#form" class="cta-button">Start Your Journey</a>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Why Choose AI Health Coach?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Personalized Plans</h3>
+                <p>AI-driven diet and workout plans based on your goals, preferences, and health data.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Calorie Tracker</h3>
+                <p>Log meals and track calories with our smart food recognition system.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Workout Guidance</h3>
+                <p>Follow guided workouts designed to match your fitness level and schedule.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Health Insights</h3>
+                <p>Receive daily tips and insights to improve sleep, stress, and overall wellness.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Form Section -->
+    <section id="form" class="health-form">
+        <h2>Get Your Personalized Plan</h2>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="number" placeholder="Age" required>
+            <select required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="number" placeholder="Weight (kg)" required>
+            <input type="number" placeholder="Height (cm)" required>
+            <select required>
+                <option value="">Fitness Goal</option>
+                <option value="weight-loss">Weight Loss</option>
+                <option value="muscle-gain">Muscle Gain</option>
+                <option value="overall-health">Overall Health</option>
+            </select>
+            <button type="submit">Generate Plan</button>
+        </form>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"The AI Health Coach helped me lose 10kg in 3 months with a plan that fit my busy schedule!"</p>
+                <p><strong>- Sarah K.</strong></p>
+            </div>
+            <div class="testimonial-card">
+                <p>"I love the calorie tracker and workout videos. It feels like having a personal trainer!"</p>
+                <p><strong>- Mike R.</strong></p>
+            </div>
+            <div class="testimonial-card">
+                <p>"The daily health tips improved my sleep and energy levels. Highly recommend!"</p>
+                <p><strong>- Priya S.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot">
+        Chat with AI Coach
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2025 AI Health Coach. All rights reserved.</p>
+        <p><a href="mailto:support@aihealthcoach.com">support@aihealthcoach.com</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>
